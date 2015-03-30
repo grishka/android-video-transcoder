@@ -1,0 +1,156 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:tools="http://schemas.android.com/tools"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				tools:context=".MainActivity">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="16dip">
+
+		<Button
+			android:id="@+id/btn_pick"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Pick a video"/>
+
+		<TextView
+			android:id="@+id/file_name"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/btn_pick"
+			android:layout_alignParentRight="true"
+			android:layout_alignTop="@id/btn_pick"
+			android:layout_alignBottom="@id/btn_pick"
+			android:layout_marginLeft="16dip"
+			android:singleLine="true"
+			android:ellipsize="end"
+			android:textSize="16dip"
+			android:textColor="#000"
+			android:gravity="center_vertical"/>
+
+		<EditText
+			android:id="@+id/edit_output_file"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/btn_pick"
+			android:layout_marginTop="16dip"
+			android:hint="Output file name"
+			android:text="/sdcard/DCIM/Converted.mp4"/>
+
+		<TextView
+			android:id="@+id/video_bitrate_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/edit_output_file"
+			android:layout_marginTop="16dip"
+			android:textSize="16dip"
+			android:textColor="#000"
+			android:text="Video bitrate:"
+			android:focusable="true"
+			android:focusableInTouchMode="true">
+			<!-- prevent keyboard from opening on app startup -->
+			<requestFocus/>
+			</TextView>
+
+		<SeekBar
+			android:id="@+id/video_bitrate_slider"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="50dip"
+			android:layout_below="@+id/video_bitrate_label"
+			android:max="5120"
+			android:progress="512"/>
+
+		<TextView
+			android:id="@+id/video_bitrate_value"
+			android:layout_width="50dip"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_alignTop="@id/video_bitrate_slider"
+			android:layout_alignBottom="@id/video_bitrate_slider"
+			android:gravity="center"
+			android:textSize="16dip"
+			android:textColor="#000"
+			android:text="512"/>
+
+		<TextView
+			android:id="@+id/audio_bitrate_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/video_bitrate_slider"
+			android:layout_marginTop="16dip"
+			android:textSize="16dip"
+			android:textColor="#000"
+			android:text="Audio bitrate:"
+			android:focusable="true"
+			android:focusableInTouchMode="true"/>
+
+		<SeekBar
+			android:id="@+id/audio_bitrate_slider"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="50dip"
+			android:layout_below="@+id/audio_bitrate_label"
+			android:max="1024"
+			android:progress="128"/>
+
+		<TextView
+			android:id="@+id/audio_bitrate_value"
+			android:layout_width="50dip"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_alignTop="@id/audio_bitrate_slider"
+			android:layout_alignBottom="@id/audio_bitrate_slider"
+			android:gravity="center"
+			android:textSize="16dip"
+			android:textColor="#000"
+			android:text="128"/>
+
+		<TextView
+			android:id="@+id/scaling_factor_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/audio_bitrate_slider"
+			android:layout_marginTop="16dip"
+			android:textSize="16dip"
+			android:textColor="#000"
+			android:text="Scaling factor:"
+			android:focusable="true"
+			android:focusableInTouchMode="true"/>
+
+		<SeekBar
+			android:id="@+id/scaling_factor_slider"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="50dip"
+			android:layout_below="@+id/scaling_factor_label"
+			android:max="7"
+			android:progress="1"/>
+
+		<TextView
+			android:id="@+id/scaling_factor_value"
+			android:layout_width="50dip"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_alignTop="@id/scaling_factor_slider"
+			android:layout_alignBottom="@id/scaling_factor_slider"
+			android:gravity="center"
+			android:textSize="16dip"
+			android:textColor="#000"
+			android:text="2"/>
+
+		<Button
+			android:id="@+id/btn_start"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:layout_below="@id/scaling_factor_slider"
+			android:layout_marginTop="16dip"
+			android:text="Start transcoding"
+			android:enabled="false"/>
+
+		</RelativeLayout>
+
+</ScrollView>
